@@ -1,0 +1,330 @@
+/* ==========================================================================
+   1. BRAND THEME & VARIABLES
+   ========================================================================== */
+:root {
+    --navy: #0a1128;
+    --gold: #b89150;
+    --cream: #f4f1ea;
+    --white: #ffffff;
+    --dark-grey: #333333;
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: var(--cream);
+    color: var(--navy);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--navy);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 100px 8%;
+}
+
+/* ==========================================================================
+   2. NAVIGATION
+   ========================================================================== */
+nav {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    transition: var(--transition);
+    z-index: 1000;
+    background: var(--navy);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--gold);
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+
+.logo i { margin-right: 12px; font-size: 1.8rem; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.nav-links a.active, .nav-links a:hover {
+    color: var(--gold);
+}
+
+/* ==========================================================================
+   3. HERO & HEADERS
+   ========================================================================== */
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(10, 17, 40, 0.75), rgba(10, 17, 40, 0.75)), 
+                url('assets/images/mannequin.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 20px;
+}
+
+.hero h1 { color: var(--white); font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.2; }
+.subtitle { color: var(--gold); display: block; margin-bottom: 15px; letter-spacing: 5px; font-weight: 600; }
+
+.page-header {
+    padding: 180px 8% 80px;
+    background: var(--navy);
+    color: var(--white);
+    text-align: center;
+}
+
+.page-header h1 { color: var(--white); margin-bottom: 15px; }
+
+/* ==========================================================================
+   4. BUTTONS
+   ========================================================================== */
+.btn {
+    padding: 16px 40px;
+    background: var(--gold);
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 25px;
+    border: 2px solid var(--gold);
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--gold);
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+    margin-left: 15px;
+}
+
+.btn-outline:hover {
+    background: var(--white);
+    color: var(--navy);
+}
+
+/* ==========================================================================
+   5. GALLERY & GRIDS
+   ========================================================================== */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+    margin-top: 50px;
+}
+
+.work-item {
+    background: var(--white);
+    border-bottom: 4px solid var(--gold);
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.work-item:hover {
+    transform: translateY(-10px);
+}
+
+.work-item img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition);
+}
+
+.work-item:hover img {
+    transform: scale(1.05);
+}
+
+.item-info { padding: 25px; }
+.item-info h3 { font-size: 1.1rem; margin-bottom: 5px; }
+.item-info p { font-size: 0.9rem; color: var(--dark-grey); opacity: 0.8; }
+
+/* ==========================================================================
+   6. ABOUT & SERVICES
+   ========================================================================== */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-image img { 
+    width: 100%; 
+    box-shadow: 20px 20px 0 var(--gold);
+    border-radius: 4px;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 45px 30px;
+    text-align: center;
+    border-top: 5px solid var(--gold);
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.card-icon { font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; }
+
+/* ==========================================================================
+   7. APPOINTMENT FORM & SIDEBAR
+   ========================================================================== */
+.booking-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+}
+
+.info-card {
+    background: var(--white);
+    padding: 30px;
+    margin-bottom: 25px;
+    border-left: 5px solid var(--gold);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.form-wrapper {
+    background: var(--white);
+    padding: 50px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+.input-group { margin-bottom: 25px; }
+
+.input-group label { 
+    display: block; 
+    font-weight: 700; 
+    margin-bottom: 10px; 
+    color: var(--navy); 
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.input-group input, .input-group select, .input-group textarea {
+    width: 100%; 
+    padding: 15px; 
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.input-group input:focus, .input-group select:focus, .input-group textarea:focus {
+    border-color: var(--gold);
+    outline: none;
+    background: #fff;
+}
+
+/* ==========================================================================
+   8. ANIMATION CLASSES
+   ========================================================================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   9. FOOTER
+   ========================================================================== */
+footer {
+    background: var(--navy);
+    color: var(--white);
+    padding: 80px 8% 30px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
+}
+
+.footer-info h3 { color: var(--gold); margin-bottom: 20px; }
+.footer-info p { margin-bottom: 12px; font-size: 0.9rem; color: rgba(255,255,255,0.8); }
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 30px;
+    font-size: 0.8rem;
+    color: var(--gold);
+}
+
+/* ==========================================================================
+   10. MOBILE RESPONSIVENESS
+   ========================================================================== */
+@media (max-width: 992px) {
+    .about-grid, .booking-layout { grid-template-columns: 1fr; gap: 40px; }
+    .hero h1 { font-size: 2.8rem; }
+}
+
+@media (max-width: 768px) {
+    nav { padding: 15px 5%; }
+    .nav-links { display: none; } /* Add a hamburger menu later if needed */
+    .section-padding { padding: 60px 5%; }
+    .input-row { grid-template-columns: 1fr; }
+}

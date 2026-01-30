@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Consultation | Black Citizen Apparel</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+
+    <nav class="always-sticky">
+        <div class="logo">
+            <i class="fa-solid fa-crown"></i>
+            BLACK CITIZEN <span style="font-weight: 300; color: #fff; margin-left: 5px;">APPAREL</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="craft.html">The Craft</a></li>
+            <li><a href="appointment.html" class="active">Appointment</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <div class="reveal">
+            <span class="section-tag" style="color: var(--gold); letter-spacing: 3px;">The Consultation</span>
+            <h1>Secure Your Fitting</h1>
+            <p>From custom construction to master shop-bought refitting—let's define your silhouette.</p>
+        </div>
+    </header>
+
+    <main class="container section-padding">
+        
+        <div class="booking-layout">
+            
+            <div class="booking-info-sidebar">
+                <div class="info-card reveal">
+                    <h3><i class="fa-solid fa-clock"></i> Studio Hours</h3>
+                    <p>Monday - Friday: 08:00 - 18:00</p>
+                    <p>Saturday: 09:00 - 15:00</p>
+                    <p>Sunday: By Appointment Only</p>
+                </div>
+
+                <div class="info-card reveal">
+                    <h3><i class="fa-solid fa-map-location-dot"></i> Our Locations</h3>
+                    <div class="studio-block">
+                        <strong>Kalkspruit Studio</strong>
+                        <p>1024 Kalkspruit, Ga Maraba<br>Next to Sehlakwana Trading Store</p>
+                    </div>
+                    <div class="studio-block" style="margin-top: 20px;">
+                        <strong>Manganeng Branch</strong>
+                        <p>Next to Kgalema via Nkadimeng Road</p>
+                    </div>
+                </div>
+
+                <div class="info-card reveal" style="background: var(--navy); color: white;">
+                    <h3><i class="fa-solid fa-circle-info" style="color: var(--gold);"></i> Fitting Preparation</h3>
+                    <ul class="prep-list" style="list-style: none; font-size: 0.85rem; padding: 0;">
+                        <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: var(--gold); margin-right: 10px;"></i> Bring the shop-bought items for refitting.</li>
+                        <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: var(--gold); margin-right: 10px;"></i> Have inspiration photos ready for custom builds.</li>
+                        <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: var(--gold); margin-right: 10px;"></i> Wear thin clothing for accurate measuring.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="form-wrapper reveal">
+                <div id="form-container">
+                    <div class="form-header" style="margin-bottom: 30px;">
+                        <h2 style="color: var(--navy);">Appointment Request</h2>
+                        <p>Welcome Phuti will review your request and contact you via WhatsApp to finalize your booking.</p>
+                    </div>
+                    
+                    <form id="appointment-form">
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label>Full Name</label>
+                                <input type="text" name="from_name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="input-group">
+                                <label>WhatsApp Number</label>
+                                <input type="tel" name="user_phone" placeholder="e.g. 071 147 7662" required>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Service Requested</label>
+                            <select name="service" required>
+                                <option value="" disabled selected>Choose a specialized service...</option>
+                                <option value="Shop-Bought Refit">Master Alteration (Shop-Bought Refit)</option>
+                                <option value="Custom Jeans/Trousers">Bespoke Denim / Trousers</option>
+                                <option value="Signature Cap">Signature Carvela-Style Cap</option>
+                                <option value="Traditional Attire">Traditional / Heritage Wear</option>
+                                <option value="Modern Streetwear">Modern Apparel (T-shirts/Skirts)</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Style Details</label>
+                            <textarea name="message" rows="5" placeholder="Tell the Master Tailor about your requirements (e.g., 'I bought jeans that need tapering' or 'I want a custom denim set')"></textarea>
+                        </div>
+
+                        <div class="form-footer" style="margin-top: 30px;">
+                            <button type="submit" id="submit-btn" class="btn" style="width: 100%;">
+                                <i class="fa-solid fa-paper-plane" style="margin-right: 10px;"></i> Send Request to Master Tailor
+                            </button>
+                            <p style="font-size: 0.75rem; color: #777; margin-top: 15px; text-align: center;">
+                                Precision tailoring takes time. We will respond within 24 hours.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="success-message" style="display: none; text-align: center; padding: 40px 0;">
+                    <i class="fa-solid fa-circle-check" style="font-size: 4rem; color: #27ae60; margin-bottom: 20px;"></i>
+                    <h2 style="color: var(--navy);">Request Received!</h2>
+                    <p style="margin-bottom: 30px;">Welcome Phuti has been notified. Check your WhatsApp for a message from him soon.</p>
+                    <a href="index.html" class="btn btn-outline" style="color: var(--navy); border-color: var(--navy);">Return to Home</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <div class="logo" style="margin-bottom: 20px;">
+                    <i class="fa-solid fa-crown"></i> BLACK CITIZEN
+                </div>
+                <p><i class="fa-brands fa-whatsapp"></i> 071 147 7662</p>
+                <p><i class="fa-solid fa-location-dot"></i> Kalkspruit | Manganeng</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Black Citizen Apparel. Precision in Every Stitch.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
